@@ -40,6 +40,14 @@ export default function App() {
         foundMatches.push(word);
       }
     }
+
+    if (foundMatches.length == 0) {
+      setError("No matching word found!");
+      setMatches([]);
+      return;
+    }
+
+    setError("");
     setMatches(foundMatches);
   }
 
