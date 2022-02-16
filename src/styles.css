@@ -1,6 +1,9 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  margin: 0 auto;
+  width: 240px;
+  border: 1px solid #eeeeee;
 }
 
 input.letter {
@@ -9,29 +12,33 @@ input.letter {
   border-color: rgba(0, 0, 0, 0.178);
   border-style: solid;
   box-shadow: 0;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
-  font-size: 24pt;
+  font-size: 20pt;
   text-align: center;
   text-transform: uppercase;
 }
 
-div.letters {
+.letters {
   direction: rtl;
 }
 
-div.matches {
+.matches {
   text-align: center;
+  width: 240px;
 }
 
-div.matches li {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.matches .word {
+  font-size: 12pt;
+  margin: 10px 0px;
+  width: 60px;
+  text-align: center;
+  display: inline-block;
 }
 
-p.error {
+.error {
   color: red;
   font-weight: bold;
+  direction: rtl;
 }

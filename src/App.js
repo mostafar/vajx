@@ -26,7 +26,7 @@ export default function App() {
 
   function showMatches(event) {
     if (known.map((i) => i[1]).filter((i) => i !== "").length < 2) {
-      setError("Enter at least two characters!");
+      setError("حداقل دوحرف از کلمه رو وارد کن!");
       setMatches([]);
       return;
     } else {
@@ -42,7 +42,7 @@ export default function App() {
     }
 
     if (foundMatches.length == 0) {
-      setError("No matching word found!");
+      setError("چیزی پیدا نکردم!");
       setMatches([]);
       return;
     }
@@ -69,8 +69,8 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Hello Cheater!</h1>
-      <h2>Enter the letters you already know:</h2>
+      <h1>دنبال یه کلمه‌ی پنج‌حرفی می‌گردی؟</h1>
+      <h2>حروفی رو که می‌دونی وارد کن</h2>
       <div class="letters">
         {known.map((box) => (
           <input
@@ -85,19 +85,25 @@ export default function App() {
         ))}
       </div>
       <br />
-      {error ? <p class="error">{error}</p> : ""}
       <br />
       <button type="button" onClick={showMatches}>
-        See Matches
+        بگرد
       </button>
       <br />
+      {error ? <p class="error">{error}</p> : ""}
       <br />
       <div class="matches">
-        <ul>
-          {matches.map((match) => (
-            <li>{match}</li>
-          ))}
-        </ul>
+        {matches.map((match) => (
+          <span class="word">
+            <a
+              href={"https://www.vajehyab.com/dehkhoda/" + match}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {match}
+            </a>
+          </span>
+        ))}
       </div>
     </div>
   );
